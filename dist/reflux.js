@@ -1511,7 +1511,7 @@ function defineReact(react, noLongerUsed, extend)
 	proto.storeKeys = null;
 	
 	// on the mounting of the component that is where the store/stores are attached and initialized if needed
-	proto.componentWillMount = function () {
+	proto.UNSAFE_componentWillMount = function () {
 		// if there is a this.store then simply push it onto the this.stores array or make one if needed
 		if (this.store) {
 			if (Array.isArray(this.stores)) {

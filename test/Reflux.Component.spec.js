@@ -7,6 +7,7 @@ chai.use(require('chai-as-promised'));
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 var Reflux = require('../src');
+var createReactClass = require('create-react-class');
 
 
 function __extends (d, b) {
@@ -73,7 +74,7 @@ describe('Creating ES6 style React classes', function()
 	
 	it('should accept React ancestors and children', function()
 	{
-		var MyChild = React.createClass({
+		var MyChild = createReactClass({
 			render: function() {
 				return React.createElement("span", null, 'Hello');
 			}
@@ -92,7 +93,7 @@ describe('Creating ES6 style React classes', function()
 			return Component;
 		}(Reflux.Component));
 		
-		var MyParent = React.createClass({
+		var MyParent = createReactClass({
 			render: function() {
 				return React.createElement("div", null, React.createElement(MyComponent, null));
 			}
